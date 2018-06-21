@@ -1,0 +1,58 @@
+<ons-modal var="PrgsBar">
+    <ons-row style="height: 44px;line-height: 44px;">
+        <ons-col width="40%" style="text-align: right;">
+            <ons-icon icon="ion-load-d" size="44px" spin="true"></ons-icon>
+        </ons-col>
+        <ons-col width="60%" style="text-align: left;padding-left: 10px;">
+            Loading...
+        </ons-col>
+    </ons-row>
+</ons-modal>
+<ons-navigator swipeable var="mainNavi">
+    <ons-page ng-controller="LoginCtrl">
+      <ons-toolbar>
+   <div class="center">Login</div>
+ </ons-toolbar>
+        <div class="page-padding" style="position: relative ;height: 100%">
+
+            <div style="text-align: center; padding-top: 23px; padding-bottom: 8px;" class="text-small">
+              Login with email
+            </div>
+
+            <form name="loginForm" style="width: 100%;padding-top: 15px;">
+                <input type="email" placeholder="Login"
+                       onmouseup="return false;"
+                       style="border-top-left-radius:5px; border-top-right-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px"
+                       name="email"
+                       ng-model="email"
+                       ng-keypress="keypressHandler($event, 11)">
+
+                <div style="width: 100%; height: 1px; background-color: #C9C9CE"></div>
+                <input type="password" placeholder="Password" required name="password"
+                       onfocus="this.select()"
+                       onmouseup="return false;"
+                       style="border-bottom-left-radius:5px; border-bottom-right-radius:5px;
+                       border-top-left-radius:0px; border-top-right-radius: 0px;"
+                       ng-model="password" id="f_11"
+                       ng-keypress="keypressHandler($event, 100, 11)">
+            </form>
+
+
+            <div class="text-small login-forgot">
+                <div style="padding-left:10px;">
+                    Forgot Password
+                    <a href="#" ng-click="moveToRecoverPasswordPage()">
+                        Click Here
+                    </a>
+                </div>
+            </div>
+
+            <div class="login-butt " style="width: 100%;">
+              <ons-button modifier="large" ng-click="login()">Login</ons-button>
+                <!-- <ons-button modifier="large" class="button-font-size button-gray-bg" ng-click="login()">
+                    Enter
+                </ons-button> -->
+            </div>
+        </div>
+    </ons-page>
+</ons-navigator>

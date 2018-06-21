@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height">
+    <title>ShoppingMallApp</title>
+    <link rel="stylesheet" type="text/css" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" type="text/css" href="lib/onsen/css/onsen-css-components.css">
+    <link rel="stylesheet" type="text/css" href="lib/onsen/css/ionicons/css/ionicons.css">
+    <link rel="stylesheet" type="text/css" href="css/app_main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/ngProgress.css"/>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="lib/onsen/js/onsenui.min.js"></script>
+    <script type="text/javascript" src="lib/onsen/js/angular-onsenui.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-touch.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="lib/toastr/toastr.js"></script>
+    <script type="text/javascript" src="lib/fastclick.js"></script>
+    <script type="text/javascript" src="lib/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="lib/ngprogress.js"></script>
+
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+    <script type="text/javascript" src="js/controllers/login_ctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/landingPage_ctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/mall_page.js"></script>
+    <script type="text/javascript" src="js/controllers/mallcategory.js"></script>
+
+    <script type="text/javascript">
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isiPhone = (userAgent.indexOf('iphone') != -1 ||
+        userAgent.indexOf('ipod') != -1) ? true : false;
+        clickEvent = isiPhone ? 'tap' : 'click';
+    </script>
+    <script type="text/javascript">
+        document.write('<style>.bottom-fixed-button{visibility:collapse}' +
+        '@media(min-height:' + ($(window).height() - 10) +
+        'px){.bottom-fixed-button{visibility:visible}}</style>');
+    </script>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding-top: constant(safe-area-inset-top);
+        }
+    </style>
+
+</head>
+
+<body >
+<div id="blockDivContainer"></div>
+<ng-include src="'partials/login.html'"></ng-include>
+<script>
+    $(document).dblclick(function (e) {
+        e.preventDefault();
+    });
+</script>
+</body>
+</html>
