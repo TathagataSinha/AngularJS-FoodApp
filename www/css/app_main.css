@@ -1,6 +1,7 @@
 /*=====================================================
   Custom fonts Lato
   ======================================================*/
+
 @font-face {
     font-family: "Lato-Black";
     src: url("../fonts/Lato-Black.ttf");
@@ -60,6 +61,12 @@
     font-family: 'Lato-Black';
     font-size: 14px;
 }
+.field_style{
+  border-top-left-radius:5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
 
 body {
     backface-visibility: hidden;
@@ -71,10 +78,10 @@ body {
     -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
     font-family: 'Lato-Light', 'HelveticaNeue';
     font-size: 14px;
-    height: 100%;
+    /* height: 100%;
     margin: 0px;
-    padding: 0px;
-    width: 100%;
+    padding: 0px; */
+    /* width: 100%;
     background-color: #ffffff;
 }
 
@@ -131,32 +138,54 @@ html, body {
 }
 
 /*---input class--*/
+#main{
+  text-align: center;
+  background: #4CA1AF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: grey;
+    opacity: 0.3;
+
+    font-style: italic;
+}
 input {
     -webkit-appearance: none;
     appearance: none;
     border: none;
     padding: 0px;
 }
-
+#logo{
+  margin-bottom: 10px;
+}
+#logo img{
+  width: 80px;
+  padding-top: 20px;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.page-padding input[type=text], input[type=password], input[type=email], input[type=tel], input[type=number] {
-    width: inherit;
+input[type=text], input[type=password], input[type=email], input[type=tel], input[type=number], input[type=text] {
+    width:80%;
     height: 44px;
-    padding-left: 10px;
-    font-family: 'Lato-Light';
+    padding-left: 14px;
+    padding-right: 14px;
+    font-family: 'Roboto',sans-serif;
     font-size: 16.5px;
-    background-color: #F2F2F2;
-    color: #808080;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    font-weight: 100;
+     background-color: #F8F8F8	;
+    color: #4CA1FF;
+    border-radius: 25px;
+     margin:10px;
 }
-
+input:hover{
+  border: 2px solid #4ca1af;
+}
 .has-error.form-control:not(:focus) {
     border: 1px solid #ff473b;
     background-image: url(../img/error.png);
