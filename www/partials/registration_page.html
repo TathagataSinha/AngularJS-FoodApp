@@ -7,45 +7,49 @@
      <ons-back-button>Back</ons-back-button>
     </div>
   </ons-toolbar>
-  <div id="main">
+
+<div id="main">
 
   <div id="logo">
-      <img src="http://pngimg.com/uploads/apple_logo/apple_logo_PNG19673.png">
+      <img src="img/images.png">
+
   </div>
- <div>
-  <form name="signupForm">
-      <input type="text" class="field_style" placeholder="Enter your name"
+  <div>
+    <form name="signupForm">
+      <input type="text" class="field_style" placeholder="User Name"
            onmouseup="return false;"
            name="name"
            ng-model="String"
-           ng-keypress="keypressHandler($event, 11)" >
-      <input type="email" class="field_style" placeholder="Enter email address"
-             onmouseup="return false;"
-             name="email"
-             ng-model="email"
-             ng-keypress="keypressHandler($event, 11)">
+           ng-keypress="keypressHandler($event, 11)" required >
 
-    <input type="tel" class="field_style" placeholder="Phone Number" required name="contact"
+      <input type="email" class="field_style" placeholder="User Email Address"
+            onmouseup="return false;"
+            name="email"
+            ng-model="email"
+            ng-keypress="keypressHandler($event, 11)" required>
+
+      <input type="number" class="field_style" placeholder="Phone Number" required name="contact"
                     ng-model="string">
 
-      <input type="password" class="field_style" placeholder="Password" required name="password"
+      <input type="password" id="passwordid" class="field_style" placeholder="Password (6 to 15 characters)" required name="password"
              onfocus="this.select()"
              onmouseup="return false;"
              ng-model="user.password" id="f_11"
-             ng-keypress="keypressHandler($event, 100, 11)">
+             ng-keypress="keypressHandler($event, 100, 11)"
+             >
 
-      <input type="password" class="field_style" placeholder="Re-enter password" required name="confirm_password"
+      <input type="password" id="confirm_passwordid" class="field_style" placeholder="Re-enter Password" required name="confirm_password"
             onfocus="this.select()"
             onmouseup="return false;"
             ng-model="user.confirmPassword"
             compare-to="user.password">
-  </form>
-</div>
-  <p style="text-align: center">
-      <ons-button ng-click="alert('Hello world!')">SIGN UP</ons-button>
-    </p>
 
+    </form>
   </div>
 
+  <p style="text-align: center">
 
+      <ons-button ng-click="check_pass()">SIGN UP</ons-button>
+  </p>
+  </div>
 </ons-page>
