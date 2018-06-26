@@ -15,7 +15,7 @@
 	$userObject=new User();
 	if(!empty($name) && !empty($password) && !empty($email) && !empty($phone_no)){
 		$hashed_password = md5($password);
-		$json_registration=$userObject->createNewRegisterUser($name,$hashed_password,$email,$phone_no);
+		$json_registration=$userObject->createNewRegisterUser($name,$hashed_password,$email,$phone_no,$password);
                 echo json_encode($json_registration);
 	}
 ?>
