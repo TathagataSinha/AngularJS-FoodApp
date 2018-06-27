@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 25, 2018 at 08:05 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Host: localhost:3306
+-- Generation Time: Jun 27, 2018 at 05:19 AM
+-- Server version: 5.6.36-82.0-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `app_database`
+-- Database: `parthasa_food`
 --
 
 -- --------------------------------------------------------
@@ -59,22 +57,41 @@ CREATE TABLE `customer` (
   `phone_no` varchar(30) NOT NULL,
   `created_date` varchar(30) NOT NULL,
   `updated_date` varchar(30) NOT NULL,
-  `address` varchar(1000) NULL
+  `address` varchar(1000) DEFAULT NULL,
+  `hash` varchar(100) NOT NULL,
+  `active` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customer_id`, `customer_name`, `password`, `email`, `phone_no`, `created_date`, `update_date`, `address`) VALUES
-(3, 'Manas Pratim Sarma', '04e5341683dd221c606a3d107a2c15ce', 'mps@gmail.com', '+918574158936', '2018-06-15 10:42:55', '', ''),
-(4, 'Tathagata Abhigyan Sinha', '8a3dcf8cd371d65c076c4f1bb3c5f8f4', 'tathagataabhiyansinha123123@gmail.com', '+919825874158', '2018-06-15 10:51:49', '', ''),
-(5, 'Rupak Gogoi', '24d135baa06470f825b6f5b345834d7a', '2014dib1995sad@mail.com', '+918574158936', '2018-06-15 11:09:19', '', ''),
-(6, 'Priyotosh Kalita', '629631d8c77ac272104676fc6686a405', 'priyotoshkalita@gmail.com', '+9103612773887', '2018-06-15 11:55:55', '', ''),
-(7, 'Perth Xrma', 'f0379aa3b94f435c057060d21e7afb10', 'perthxrma@gmail.com', '+919954099540', '2018-06-15 12:15:49', '', ''),
-(8, 'John Smith', '9fac6799b5827bb87ec6b080792ea19d', 'john@mail.com', '+17895247856', '2018-06-15 14:58:04', '', ''),
-(10, 'ASDASDDsad AD SAD ', '9f1019eeb4f3b35a43241388c227be57', 'sdadsa@dsadsa.com', '+987885887231', '2018-06-21 15:53:03', '', ''),
-(11, 'dsadsads sad', 'dc06698f0e2e75751545455899adccc3', 'email@email.com', '+91978258788', '2018-06-21 16:14:31', '', '');
+INSERT INTO `customer` (`customer_id`, `customer_name`, `password`, `email`, `phone_no`, `created_date`, `updated_date`, `address`, `hash`, `active`) VALUES
+(5, 'Rupak Gogoi', '24d135baa06470f825b6f5b345834d7a', '2014dib1995sad@mail.com', '+918574158936', '2018-06-15 11:09:19', '', '', '', 0),
+(7, 'Perth Xrma', 'f0379aa3b94f435c057060d21e7afb10', 'perthxrma@gmail.com', '+919954099540', '2018-06-15 12:15:49', '', '', '', 0),
+(8, 'John Smith', '9fac6799b5827bb87ec6b080792ea19d', 'john@mail.com', '+17895247856', '2018-06-15 14:58:04', '', '', '', 0),
+(10, 'ASDASDDsad AD SAD ', '9f1019eeb4f3b35a43241388c227be57', 'sdadsa@dsadsa.com', '+987885887231', '2018-06-21 15:53:03', '', '', '', 0),
+(14, 'First Last', 'f5ca9f9db948ea49efe78a5edf91cd74', 'johdn@mail.com', '+918978254789', '2018-06-25 11:59:47', '2018-06-25 11:59:47', NULL, '', 0),
+(16, 'Rupak Gogoi', '30a402668647b9aa22b298fdb62cc0bd', 'rupakgogoi@gmail.com', '+919954099540', '2018-06-25 12:24:33', '2018-06-25 12:24:33', NULL, '', 0),
+(17, 'Rupak Gogoi', '30a402668647b9aa22b298fdb62cc0bd', 'dfsfsdfskgogoi@gmail.com', '+919954099540', '2018-06-25 12:35:23', '2018-06-25 12:35:23', NULL, '', 0),
+(25, 'Partha', 'e10adc3949ba59abbe56e057f20f883e', 'parthasaraama96@gmail.com', '+98789888585', '2018-06-26 10:39:49', '2018-06-26 10:39:49', NULL, 'acc3e0404646c57502b480dc052c4fe1', 0),
+(27, 'Partha', 'e10adc3949ba59abbe56e057f20f883e', 'partshasarma96@gmail.com', '+98789888585', '2018-06-26 10:54:06', '2018-06-26 10:54:06', NULL, 'b6a1085a27ab7bff7550f8a3bd017df8', 0),
+(28, 'Partha', 'e10adc3949ba59abbe56e057f20f883e', 'qwewqe', '+98789888585', '2018-06-26 10:56:03', '2018-06-26 10:56:03', NULL, 'd2ddea18f00665ce8623e36bd4e3c7c5', 0),
+(29, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthasarma96@gmail.com', '+98789888585', '2018-06-26 10:57:54', '2018-06-26 10:57:54', NULL, '4f6ffe13a5d75b2d6a3923922b3922e5', 0),
+(30, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthasaarma96@gmail.com', '+98789888585', '2018-06-26 10:59:46', '2018-06-26 10:59:46', NULL, 'b86e8d03fe992d1b0e19656875ee557c', 0),
+(31, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthaasaarma96@gmail.com', '+98789888585', '2018-06-26 11:00:21', '2018-06-26 11:00:21', NULL, 'b337e84de8752b27eda3a12363109e80', 0),
+(32, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthaasaarmaa96@gmail.com', '+98789888585', '2018-06-26 11:00:35', '2018-06-26 11:00:35', NULL, 'e2a2dcc36a08a345332c751b2f2e476c', 0),
+(33, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthaaasaarmaa96@gmail.com', '+98789888585', '2018-06-26 11:00:56', '2018-06-26 11:00:56', NULL, 'e165421110ba03099a1c0393373c5b43', 0),
+(34, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthaaasaaarmaa96@gmail.com', '+98789888585', '2018-06-26 11:03:10', '2018-06-26 11:03:10', NULL, '4c27cea8526af8cfee3be5e183ac9605', 0),
+(35, 'Partha Sarma', 'e10adc3949ba59abbe56e057f20f883e', 'parthaaasaaarmaaa96@gmail.com', '+98789888585', '2018-06-26 11:04:40', '2018-06-26 11:04:40', NULL, 'e165421110ba03099a1c0393373c5b43', 0),
+(36, 'Tathagata Abhigyan Sinha', 'a0de3811d49a7c5cd06c2b2a16d865d2', 'sinha.tathagataabhigyan@gmail.com', '+918876327852', '2018-06-26 11:12:04', '2018-06-26 11:12:04', NULL, '704afe073992cbe4813cae2f7715336f', 0),
+(37, 'Tathagata Abhigyan Sinha', 'a0de3811d49a7c5cd06c2b2a16d865d2', 'iampps147@gmail.com', '+918876327852', '2018-06-26 11:14:06', '2018-06-26 11:14:06', NULL, '58e4d44e550d0f7ee0a23d6b02d9b0db', 0),
+(38, 'Tathagata Abhigyan Sinha', 'a0de3811d49a7c5cd06c2b2a16d865d2', 'dasdsad@dasdsadsad.com', '+918876327852', '2018-06-26 11:15:08', '2018-06-26 11:15:08', NULL, '5ec91aac30eae62f4140325d09b9afd0', 0),
+(39, 'Tathagata Abhigyan Sinha', 'a0de3811d49a7c5cd06c2b2a16d865d2', 'dasdsad@dsadasdsadsad.com', '+918876327852', '2018-06-26 11:16:08', '2018-06-26 11:16:08', NULL, '9bf31c7ff062936a96d3c8bd1f8f2ff3', 0),
+(40, 'rupak gogoi', 'a4d697463a11d20834693fbe54b5e64f', '2014dib25@gmail.com', '8402814579', '2018-06-26 11:45:48', '2018-06-26 11:45:48', NULL, '1f50893f80d6830d62765ffad7721742', 1),
+(41, 'rupak gogoi', 'a4d697463a11d20834693fbe54b5e64f', '2014dibb25@gmail.com', '8402814579', '2018-06-26 11:55:20', '2018-06-26 11:55:20', NULL, 'b53b3a3d6ab90ce0268229151c9bde11', 0),
+(42, 'rupak gogoi', 'a4d697463a11d20834693fbe54b5e64f', '2014dibbddd25@gmail.com', '8402814579', '2018-06-26 12:01:58', '2018-06-26 12:01:58', NULL, '43ec517d68b6edd3015b3edc9a11367b', 0),
+(43, 'priyotosh kalita', '0f017d5fbba93d643871f8de51179c75', 'priyotoshkalita@gmail.com', '+918486243899', '2018-06-26 12:13:36', '2018-06-26 12:13:36', NULL, '735b90b4568125ed6c3f678819b6e058', 1);
 
 -- --------------------------------------------------------
 
@@ -348,73 +365,61 @@ ALTER TABLE `restaurant_photos`
 --
 ALTER TABLE `city`
   MODIFY `city_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `food_category`
 --
 ALTER TABLE `food_category`
   MODIFY `foodcategory_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `food_items`
 --
 ALTER TABLE `food_items`
   MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `food_photos`
 --
 ALTER TABLE `food_photos`
   MODIFY `foodphoto_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `mall`
 --
 ALTER TABLE `mall`
   MODIFY `mall_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `mall_photos`
 --
 ALTER TABLE `mall_photos`
   MODIFY `mallphoto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `mycart`
 --
 ALTER TABLE `mycart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
   MODIFY `restaurant_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `restaurant_food`
 --
 ALTER TABLE `restaurant_food`
   MODIFY `restaurantfood_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `restaurant_photos`
 --
 ALTER TABLE `restaurant_photos`
   MODIFY `restaurantphoto_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
@@ -476,7 +481,6 @@ ALTER TABLE `restaurant_food`
 --
 ALTER TABLE `restaurant_photos`
   ADD CONSTRAINT `restaurant_photos_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`restaurant_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
