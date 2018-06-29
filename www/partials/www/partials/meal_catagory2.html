@@ -1,0 +1,81 @@
+
+  <ons-page ng-controller="MallCategoryPageController">
+<!-- <ons-toolbar transparent>
+  <div class="center">{{page.title}}</div>
+  <div class="right">
+    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>
+  </div>
+</ons-toolbar> -->
+
+    <ons-toolbar>
+      <div class="center">
+        <ons-segment id="segment" tabbar-id="tabbar" style="width: 80%; padding-top:10px;  position: fixed; left: 10% ">
+          <button>Starters</button>
+          <button>Main Course</button>
+          <button>Dessert</button>
+        </ons-segment>
+      </div>
+    </ons-toolbar>
+
+    <!-- Comment <ons-tabbar> out to test this one -->
+    <ons-segment active-index="1" style="width: 280px; margin: 10px 20px; ">
+      <button>Label 1</button>
+      <button>Label 2</button>
+      <button>Label 3</button>
+    </ons-segment>
+
+    <ons-tabbar id="tabbar">
+      <ons-tab page="page1.html" active></ons-tab>
+      <ons-tab page="page2.html"></ons-tab>
+      <ons-tab page="page3.html"></ons-tab>
+    </ons-tabbar>
+  </ons-page>
+  <!-- <template id="page1.html">
+    <ons-page>
+      <ons-list-header>List of Items</ons-list-header>
+      <ons-list>
+      <ons-list-item ng-click="alert('Next')" ons-lazy-repeat="MyDelegate" >
+        <div class="left">
+          <img class="list-item__thumbnail" src="images.png">
+        </div>
+        <div class="center">
+          <span class="list-item__title">{{ item.title }}</span><span class="list-item__subtitle">{{ item.desc }}</span>
+        </div>
+      </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </template>
+
+  <template id="page2.html">
+    <ons-page>
+      <ons-list-header>List of Items</ons-list-header>
+      <ons-list>
+      <ons-list-item ng-click="alert('Next')" ons-lazy-repeat="MyDelegate" >
+        <div class="left">
+          <img class="list-item__thumbnail" src="images.png">
+        </div>
+        <div class="center">
+          <span class="list-item__title">{{ item.title }}</span><span class="list-item__subtitle">{{ item.desc }}</span>
+        </div>
+      </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </template>
+
+  <template id="page3.html">
+    <ons-page>
+      <ons-list-header>List of Items</ons-list-header>
+      <ons-list>
+      <ons-list-item ng-click="alert('Next')" ons-lazy-repeat="MyDelegate" >
+        <div class="left">
+          <img class="list-item__thumbnail" src="images.png">
+        </div>
+        <div class="center">
+          <span class="list-item__title">{{ item.title }}</span><span class="list-item__subtitle">{{ item.desc }}</span>
+        </div>
+      </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </template> -->
