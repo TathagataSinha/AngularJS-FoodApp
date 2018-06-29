@@ -41,7 +41,15 @@ CREATE TABLE `city` (
 INSERT INTO `city` (`city_id`, `city_code`, `city_name`, `city_location`, `city_address`) VALUES
 (1, 'dl435', 'New Delhi', '28.6139° N, 77.2090° E', 'New Delhi,India,PIN 110001'),
 (2, 'mum421', 'Mumbai', '19.0760° N, 72.8777° E', 'Mumbai,Maharastra,India,PIN 400004'),
-(3, 'kol311', 'Kolkata', '22.5726° N, 88.3639° E', 'Kolkata,West Bengal,India,PIN 700001');
+(3, 'kol311', 'Kolkata', '22.5726° N, 88.3639° E', 'Kolkata,West Bengal,India,PIN 700001'),
+(4, 'noi123', 'Noida', '28.5355° N, 77.3910° E', 'Noida,Uttar pradesh,PIN 201301'),
+(5, 'chen321', 'chennai', '13.0827° N, 80.2707° E', 'Chennai,Tamil Nadu,PIN 600001'),
+(6, 'pune113', 'Pune', '18.5204° N, 73.8567° E', 'Pune,Maharastra,PIN 411001'),
+(7, 'guw112', 'Guwahati', '26.1445° N, 91.7362° E', 'Guwahati,Assam,PIN 781001'),
+(8, 'ben121', 'Bengaluru', '12.9716° N, 77.5946° E', 'Bengaluru,Karnataka,PIN 560001'),
+(9, 'moh132', 'Mohali', '30.7046° N, 76.7179° E', 'Mohali,Punjab,PIN 140055'),
+(10, 'shim142', 'Shimla', '31.1048° N, 77.1734° E', 'Shimla,Himachal Pradesh,PIN 171001');
+
 
 -- --------------------------------------------------------
 
