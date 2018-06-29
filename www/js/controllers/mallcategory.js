@@ -10,5 +10,8 @@
       console.log('active button index', document.getElementById('segment').getActiveButtonIndex());
       console.log('active tab index', document.getElementById('tabbar').getActiveTabIndex());
     };
+    $scope.openMallPage = function (val){
+          mainNavi.pushPage('partials/landing.html');
+    }
 
   });

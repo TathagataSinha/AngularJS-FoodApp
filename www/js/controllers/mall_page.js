@@ -6,23 +6,22 @@
           return;
         }
         itemScope.item = {
-          title: 'Item #' + (index + 1),
-          desc: 'Bla bla bla bla...'
+          title: 'City ' + (index + 1),
+          desc: 'Noida,Uttar Pradesh'
         };
       },
       countItems : function() {
-        return 10;
+        return 12;
       },
       destroyItemScope: function(index, scope) {
       }
     };
 
     $scope.alert = function(index, itemScope) {
-      ons.notification.alert('Item #' + (index + 1));
+      ons.notification.alert('city' + (index + 1));
     };
 
     $scope.openMallPage = function (val){
-          mainNavi.pushPage('partials/meal_catagory2.html');
+          mainNavi.pushPage('partials/registration_page.html');
     }
-
   });

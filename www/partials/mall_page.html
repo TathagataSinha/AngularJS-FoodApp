@@ -1,32 +1,24 @@
-<ons-page ng-controller="PageController">
+<ons-page  ng-controller="PageController">
   <ons-toolbar modifier="transparent; cover-content">
-    <div class="center">
-      <ons-search-input placeholder="Search" style="padding-top:1.2%; width:80%"></ons-search-input>
-    </div>
     <div class="left">
      <ons-back-button>Back</ons-back-button>
     </div>
   </ons-toolbar>
 
-  <div style="align:center;padding-top: 0px;">
-    <p>
-      <image src="img/images.png" style="width:100%; padding-left:5%; padding-top:0%">
-    </p>
-  </div>
-  <p>{{page.title}}</p>
+  <!-- <p>{{page.title}}</p> -->
 
-
-  <ons-list-header>List of Items</ons-list-header>
-  <ons-list>
-    <ons-list-item ng-click="openMallPage('hello')" ons-lazy-repeat="MyDelegate">
+<ons-list >
+    <div id="searchbar-pos">
+    <ons-search-input placeholder="Search City" id="search"></ons-search-input>
+    </div>
+  <ons-card id="card-view">
+    <ons-list-item ng-click="openMallPage('hello')" ons-lazy-repeat="MyDelegate" >
       <div class="left">
-        <img class="list-item__thumbnail" src="img/images.png">
+        <i class="fa fa-map-marker" id="icon-city"></i>
       </div>
-      <div class="center">
-        <span class="list-item__title">{{ item.title }}</span><span class="list-item__subtitle">{{ item.desc }}</span>
-      </div>
-    </ons-list-item>
+    <span class="list-item__title" >{{ item.title }}</span><span class="list-item__subtitle">{{ item.desc }}</span>
+  </ons-list-item>
+  </ons-card>
   </ons-list>
-
-
+</div>
 </ons-page>

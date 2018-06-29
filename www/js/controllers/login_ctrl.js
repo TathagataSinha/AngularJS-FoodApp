@@ -36,7 +36,7 @@ controllers.controller('LoginCtrl', ['$scope', 'globalVarService',
             });
           }
             else {
-              mainNavi.pushPage('partials/mall_page.html',{data: {title: 'Page 2'}});
+              mainNavi.pushPage('partials/registration_page.html',{data: {title: 'Page 2'}});
             }
 
 
