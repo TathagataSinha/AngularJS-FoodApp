@@ -16,7 +16,7 @@
 			return $json_array;
 		}
 		public function getfoodItems($food_category){
-			$query=" SELECT * FROM ".$this->db_table." WHERE food_category='$food_category'";
+			$query=" SELECT * FROM ".$this->db_table." WHERE foodcategory_id='$foodcategory_id'";
 			$result=mysqli_query($this->db->getDb(),$query);
 			$json_array=array();
 			while($row=mysqli_fetch_assoc($result)){
