@@ -17,13 +17,13 @@
 				}
 				$json["message"]=$json_array;
 				$json["data"]="";
-				return $json;
 				}
 				else{
 					$json["success"]=false;
 					$json["message"]="";
 					$json["data"]="";
 				}
+			return $json;
 		}
 		public function getfoodItems($foodcategory_id){
 			$query=" SELECT * FROM ".$this->db_table." WHERE foodcategory_id='$foodcategory_id'";
@@ -36,13 +36,13 @@
 				}
 				$json["message"]=$json_array;
 				$json["data"]="";
-				return $json;
 				}
 				else{
 					$json["success"]=false;
 					$json["message"]="";
 					$json["data"]="";
 				}
+			return $json;
 
 			}
 	}
