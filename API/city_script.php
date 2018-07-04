@@ -10,21 +10,41 @@
 			$query="SELECT * FROM ".$this->db_table;
 			mysqli_query($this->db->getDb(),"SET CHARACTER SET utf8");
 			$result=mysqli_query($this->db->getDb(),$query);
-			$json_array=array();
-			while($row=mysqli_fetch_assoc($result)){
-				$json_array[]=$row;
+			if($result){
+				$json['status']=true;
+				$json_array=array();
+				while($row=mysqli_fetch_assoc($result)){
+					$json_array[]=$row;
+				}
+				$json['message']=$json_array;
+				$json['data']='';
 			}
-			return $json_array;
+			else{
+				$json['status']=false;
+				$json['message']=$json_array;
+				$json['data']='';
+			}
+			return $json;
 		}
 		public function getCityDetails($cityCode){
 			$query="SELECT * FROM ".$this->db_table." WHERE city_code='$cityCode'";
 			mysqli_query($this->db->getDb(),"SET CHARACTER SET utf8");
 			$result=mysqli_query($this->db->getDb(),$query);
-			$json_array=array();
-			while($row=mysqli_fetch_assoc($result)){
-				$json_array[]=$row;
+			if($result){
+				$json['status']=true;
+				$json_array=array();
+				while($row=mysqli_fetch_assoc($result)){
+					$json_array[]=$row;
+				}
+				$json['message']=$json_array;
+				$json['data']='';
 			}
-			return $json_array;
+			else{
+				$json['status']=false;
+				$json['message']=$json_array;
+				$json['data']='';
+			}
+			return $json;
 		}
 	}
 	?>
