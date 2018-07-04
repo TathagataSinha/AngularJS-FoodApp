@@ -1,24 +1,66 @@
 <ons-page ng-controller="PageController">
   <ons-toolbar modifier="transparent; cover-content">
+    <div class="right">
+    <span class="toolbar-button toolbar-button--material">
+          <i class="zmdi zmdi-more-vert"></i>
+        </span></div>
+
     <div class="left">
-     <ons-back-button>Back</ons-back-button>
+      <ons-toolbar-button>
+        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+      </ons-toolbar-button>
     </div>
+
   </ons-toolbar>
+      <image src="img/banner.png" id="banner-size">
+        <div class="search-bar-pos">
+            <ons-search-input placeholder="Search" id="search-bar-size" ></ons-search-input>
+          </div>
+   <li class="list-item">  <div class="card">
+       <ons-list-item > <img class="list-item__thumbnail" src="img/images.png" id="img-list">
+          <div class="mall-name-pos">Mall 1<br>Delhi NCR<br>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span></div>
+         </ons-list-item>
+      </div></li>
+      <li class="list-item"> <div class="card">
+         <ons-list-item tappable> <img class="list-item__thumbnail" src="img/images.png" id="img-list">
+            <div class="mall-name-pos">Mall 2<br>Delhi NCR<br>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span></div></ons-list-item>
+        </div></li>
+      <li class="list-item" tappable>  <div class="card">
+         <ons-list-item tappable> <img class="list-item__thumbnail" src="img/images.png" id="img-list">
+            <div class="mall-name-pos">Mall 3<br>Delhi NCR<br>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span></div></ons-list-item>
+        </div></li>
+        <li class="list-item"> <div class="card">
+           <ons-list-item tappable> <img class="list-item__thumbnail" src="img/images.png" id="img-list">
+              <div class="mall-name-pos">Mall 4<br>Delhi NCR<br>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span></div></ons-list-item>
+          </div></li>
+        <li class="list-item" tappable>  <div class="card">
+           <ons-list-item tappable> <img class="list-item__thumbnail" src="img/images.png" id="img-list">
+              <div class="mall-name-pos">Mall 5<br>Delhi NCR<br>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span></div></ons-list-item>
+          </div></li>
 
-  <!-- <p>{{page.title}}</p> -->
-
-
-   <ons-list id="list-view">
-    <div id="searchbar-pos">
-    <ons-search-input placeholder="Search City" id="search"></ons-search-input>
-    </div>
-  <ons-card id="card-view">
-    <ons-list-item ng-click="openMallPage('hello')" ons-lazy-repeat="MyDelegate" id="list-item-view">
-      <div class="left">
-        <i class="fa fa-map-marker" id="icon-city"></i>
-      </div>
-       <span class="list-item__title" >{{ item.title }}</span><span class="list-item__subtitle">{{ item.desc }}</span>
-  </ons-list-item>
-  </ons-card>
-</ons-list>
 </ons-page>
