@@ -7,7 +7,7 @@
 			$this->db=new DbConnect();
 		}
 		public function getAll(){
-			$query="SELECT * FROM ".$this->db_table;
+			$query="SELECT * FROM city LEFT JOIN city_photos ON city.city_id=city_photos.city_id";
 			mysqli_query($this->db->getDb(),"SET CHARACTER SET utf8");
 			$result=mysqli_query($this->db->getDb(),$query);
 			if($result){
