@@ -1,5 +1,5 @@
 <?php
-	require_once "mycart_script.php";
+	require_once "mycart_script1.php";
 	$cart_object=new mycart();
 	if(isset($_POST["cart_id"]) && !empty("cart_id")) {
 			$cart_id=$_POST["cart_id"];
