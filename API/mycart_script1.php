@@ -16,11 +16,9 @@
 				$json["success"]=false;
 				$json["message"]="Failed to execute";
 				$json["data"]="";
-
 			}
 			return $json;
 		}
-
 		public function removeItem($item_id){
 			if($this->check_if_added($item_id)==true){
 				$query="DELETE FROM mycart WHERE item_id='$item_id'";
@@ -35,7 +33,6 @@
 		}
 				return $json;
 		}
-
 		public function check_if_added($item_id){
 			$query="SELECT * FROM mycart where item_id='$item_id'";
 			$result=mysqli_query($this->db->getDb(),$query);
@@ -46,6 +43,24 @@
 			}
 			
 		}
+		public function displayCart($customer_id){
+			$query="SELECT * FROM mycart WHERE customer_id='$customer_id' AND status='Added to Cart'";
+			$result = mysqli_query($this->db->getDb(),$query);
+			if($result){
+				$json['success']=true;
+				$json_array=array();
+				while($query_row=mysqli_fetch_assoc($result)){
+					$json_array[]=$row;
+				}
+				$json['message']=$json_array;
+				$json['data']='';
+			}
+			else{
+				$json['success']=false;
+				$json['message']='Failed to execute';
+				$json['data']='';
+			}
+			
+		}
 	}
-
 ?>
